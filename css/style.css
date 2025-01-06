@@ -1,306 +1,246 @@
-/* CSS Reset */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+/* Mobile First Styles */
+#navbar--mobile {
+  height: 50px;
 }
 
-body {
-  font-family: sans-serif;
-}
-
-/* Variables */
-:root {
-  --primary-color: #3481c4;
-}
-
-/* ========== COMMON ========== */
-.container {
-  max-width: 1170px;
-}
-
-a {
-  text-decoration: none;
-}
-
-li {
-  list-style-type: none;
-}
-
-span {
-  color: black;
-}
-
-/* ========== HEADER ========== */
-.header-body {
-  display: flex;
-  align-items: center;
-  padding: 20px 20px 0;
+nav {
   background-color: var(--primary-color);
-}
-
-.navbar ul {
   display: flex;
+  flex-direction: column; /* Default is column for mobile */
+  align-items: flex-start; /* Align items to the left */
+  padding: 10px; /* Reduced padding for mobile */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0px; /* Dính vào đỉnh viewport */
+  z-index: 100; /* Đảm bảo navbar ở trên các phần tử khác */
 }
 
-.navbar {
-}
-
-.navbar__item {
-  list-style-type: none; /* Loại bỏ dấu chấm */
-}
-
-/* Tự thêm riêng */
-.header-body .logo {
-  width: 120px;
-  padding: 10px;
-}
-
-.navbar__link {
-  color: #fff;
-  font-size: 16px;
-  font-weight: 600;
-  padding: 15px 20px; /* Có thể mở link phạm vi rộng hơn - chỉnh lại size sau */
-}
-
-.header-contact {
-  margin-left: auto; /* Kéo Contact qua bên phải */
-  display: flex;
-  align-items: center;
-}
-
-.header-contact-link-tel {
-  display: inline-block; /* Để có thể thêm padding */
-  padding: 10px 16px;
-  font-size: 16px;
-  font-weight: 600;
-  background: #c3c5d2;
-  border-radius: 4px;
-  border: 1px dashed #2b325f;
-}
-
-.header-contact-text-tel {
-  font-size: 16px;
-  vertical-align: middle;
-  background-color: rgba(43, 50, 95, 0.7);
-  color: white;
-  padding: 5px;
-  border-radius: 4px;
-  margin-right: 5px;
-}
-
-.header-contact-Kakao {
-  margin-left: 24px;
-  width: 42px;
-  object-fit: cover;
-}
-
-/* ========== FOOTER ========== */
-.footer {
-  padding: 20px;
-}
-
-.footer-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.sns-bar {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 20px;
-}
-
-.sns-list ul {
-  display: flex;
-  justify-content: center;
-  margin: 10px 0;
-}
-
-.sns-list li {
-  margin: 0 10px;
-}
-
-.footer-top {
-  display: flex;
-  justify-content: center;
-  padding: 10px;
-  background-color: #585858;
+.logo-container {
   width: 100%;
-}
-
-.footer-info {
-}
-
-.footer-logo-img {
-  max-width: 150px;
-  margin-bottom: 10px;
-}
-
-.company-info {
-  text-align: center;
-}
-
-.company-info span {
-  color: white;
-}
-
-.copyright {
-  text-align: center;
-  font-size: 12px;
-  color: black;
-  padding: 20px;
-}
-
-/* ========== MAIN ========== */
-/* ~~~~~ TOUR ~~~~~ */
-.tour-wrapper {
-  margin-top: 30px;
-  background: #ccc;
-  padding: 60px;
-}
-
-.tour-wrapper a {
-  text-decoration: none;
-  color: black;
-}
-
-.text_wrap {
-}
-
-.exhibition_list {
-  display: flex;
-  gap: 30px;
-}
-
-.exhibition_item {
-  width: 100%; /* Căn đều size img */
-  background: #fff;
-  flex: 1; /* Căn đều 3 card */
-}
-
-.exhibition_item img {
-  width: 100%; /* Giảm size img */
-  height: 200px;
-  object-fit: cover;
-}
-
-.item_text_group {
-  padding: 15px;
-}
-
-.item_text_group .tit {
-  font-size: 20px;
-  text-align: center;
-  color: blue;
-  margin-bottom: 10px;
-}
-
-/* ~~~~~ REALITY ~~~~~ */
-.reality-list {
-  display: flex;
-  gap: 20px;
-}
-
-.reality-list__item {
-  flex: 1 0 30%; /* Chia đều không gian cho 3 item, mỗi item chiếm khoảng 30% chiều rộng */
-  box-sizing: border-box; /* Đảm bảo padding và border không làm thay đổi kích thước */
-}
-
-.reality-list__item .box {
-  width: 100%; /* Đảm bảo box chiếm toàn bộ chiều rộng của li */
-  height: 100%;
-  border: 1px solid;
-}
-/* Bo góc */
-.rounded {
-  border-radius: 10px;
-}
-
-.thumb img {
-  width: 100%;
-  height: 250px;
-  border-radius: 10px 10px 0 0;
-  object-fit: cover;
-}
-
-.item-info {
-  padding: 10px;
-}
-
-.photo-list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr); /* Chia làm 4 cột bằng nhau */
-}
-
-/* Reality Product Page */
-.product-photo-wrapper {
-  margin-top: 50px;
-  width: 80%;
-  height: 80%;
-}
-
-.main-photo {
-  height: 500px; /* Set tạm */
-  position: relative;
-}
-
-.controls {
-  font-size: 100px;
-  color: blue;
-  position: absolute;
-  top: 50%;
-  display: flex;
-}
-
-.prev {
-  left: 10px;
-}
-
-.next {
-  right: 10px;
-}
-
-.list-image {
-  display: flex;
-  width: 100%;
-  height: 15%;
-  justify-content: space-between;
-}
-
-.list-image-file {
-  flex: 1;
-  padding: 3px;
-}
-
-.product-photo-wrapper img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-}
-
-/* Table Box Con */
-table {
-  width: 70%;
-  border-collapse: collapse;
-  margin-top: 20px;
-}
-
-th,
-td {
-  border: 1px solid #ddd;
-  padding: 10px;
   text-align: left;
 }
 
-th {
-  background-color: #f2f2f2;
+.logo-container img {
+  max-height: 25px; /* Slightly smaller logo on mobile */
 }
 
-.units {
-  font-size: smaller;
-  color: gray;
+.nav-links {
+  background-color: var(--primary-color);
+  display: none; /* Hidden by default on mobile */
+  flex-direction: column;
+  width: 100%;
+  text-align: left;
+  margin-top: 10px;
+}
+
+.nav-links.active {
+  display: flex;
+}
+
+.nav-links a {
+  display: block;
+  width: 100%;
+  margin: 5px 0;
+  padding: 15px;
+  border-top: 1px solid #ddd;
+  text-decoration: none;
+  color: white;
+  box-sizing: border-box; /* Important for width: 100% to include padding and border */
+}
+
+.menu-icon {
+  color: white;
+  display: block;
+  font-size: 2rem; /* Use rem for better scaling */
+  cursor: pointer;
+  position: absolute;
+  top: 10px; /* Adjusted position */
+  right: 10px; /* Adjusted position */
+}
+
+.signup-button {
+  background-color: purple;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  text-decoration: none;
+  width: 100%;
+  margin-top: 10px;
+  box-sizing: border-box; /* Important for width: 100% to include padding */
+}
+
+/* Basic container for pages */
+.container {
+  margin: 20px;
+}
+
+/* basic styling for ul elements */
+ul {
+  list-style-type: square;
+}
+
+/* Mobile First Styles */
+
+/* Common styles for both product and property grids */
+.section-title {
+  text-align: center;
+  margin-bottom: 1rem; /* Use rem for better scalability */
+}
+
+.grid-container {
+  /* Common container for grids */
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center; /* Center on mobile */
+  gap: 1rem; /* Use rem for better scalability */
+  padding: 1rem; /* Add some padding around the grid */
+}
+
+.grid-card {
+  /* Common styles for cards */
+  text-align: left;
+  width: 100%; /* Full width on mobile */
+  box-sizing: border-box; /* Include padding and border in width */
+  border: 1px solid #eee;
+  padding: 1rem;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.grid-image {
+  /* Common styles for images */
+  width: 100%;
+  object-fit: cover;
+  margin-bottom: 0.5rem;
+}
+
+/* Product Grid Layout */
+.product-grid {
+}
+
+.product-card {
+}
+
+.product-image {
+  height: 200px; /* Adjust as needed for mobile */
+}
+
+.product-description {
+}
+
+.product-title {
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.product-details {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.product-price {
+  font-size: 1.1rem;
+  color: #333;
+  font-weight: bold;
+}
+
+/* Property Grid Layout */
+.property-grid {
+}
+
+.property-card {
+  position: relative;
+}
+
+.property-image {
+  height: 250px; /* Adjust as needed for mobile */
+}
+
+.ribbon {
+  width: 100%;
+  height: 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, 0.7); /* Slightly less transparent */
+  border-radius: 5px;
+  display: flex; /* Center text vertically */
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.property-type {
+  font-size: 0.9rem;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.property-area {
+  font-size: 0.8rem;
+  color: #555;
+}
+
+/* Property Detail Layout */
+.property-detail {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem; /* Add some padding */
+}
+
+.main-image {
+  width: 100%; /* Full width on mobile */
+  margin-bottom: 1rem;
+}
+
+.main-img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.thumbnail-images {
+  display: flex;
+  flex-wrap: wrap; /* Allow thumbnails to wrap */
+  justify-content: center; /* Center thumbnails */
+  gap: 0.5rem;
+}
+
+.thumbnail {
+  width: 100px; /* Smaller thumbnails on mobile */
+  height: 75px;
+  object-fit: cover;
+  cursor: pointer;
+}
+
+/* Styles for larger screens */
+@media (min-width: 768px) {
+  /* Adjust breakpoint as needed */
+  .grid-container {
+    justify-content: space-around; /* Distribute cards evenly on larger screens */
+    padding: 2rem;
+  }
+  .grid-card {
+    width: calc(33.33% - 2rem); /* 3 cards per row with gap */
+  }
+  .product-card {
+    width: 200px;
+  }
+  .property-card {
+    width: 250px;
+  }
+  .main-image {
+    width: 500px;
+  }
+  .thumbnail {
+    width: 150px;
+    height: 100px;
+  }
+}
+@media (min-width: 1024px) {
+  .grid-card {
+    width: calc(25% - 2rem); /* 4 cards per row with gap */
+  }
 }

@@ -1,118 +1,37 @@
-/* PC */
-@media (min-width: 992px) {
-  .mobile-header {
-    display: none;
-  }
-}
-
-/* Table & Mobile */
-@media (max-width: 991.98px) {
-  .navbar,
-  .header-contact {
-    display: none; /* Hide Navbar */
-  }
-
-  .header-body {
-    position: relative;
-    height: 50px;
-  }
-
-  /* Chuyển logo vào giữa */
-  .header-body .logo {
-    width: 100px;
-    position: absolute;
-    right: 0;
-    translate: 0 -30px;
-  }
-
-  /* Căn lại vị trí Menu  */
-  .menu-header__icon {
-    position: absolute;
-    top: 15px;
-    left: 25px;
-    color: white;
-    width: 22px;
-  }
-
-  /* Overlay */
-  .menu-overlay {
-    position: fixed;
-    background-color: rgba(0, 0, 0, 0.3);
-    inset: 0;
-    z-index: 1;
-    /* Bình thường ẩn overlay */
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.5s;
-  }
-
-  /* Kiểm tra nếu checkbox được check thì hiện overlay */
-  .menu-checkbox:checked ~ .menu-overlay {
-    opacity: 1;
-    visibility: visible;
-  }
-
-  /* Menu Drawer */
-  .menu-drawer {
-    position: fixed;
-    background-color: var(--primary-color);
-    inset: 0 40% 0 0;
-    z-index: 2;
-    transform: translateX(-100%);
-    transition: 0.5s;
-  }
-
-  /* Kiểm tra nếu checkbox được check thì hiện menu drawer */
-  .menu-checkbox:checked ~ .menu-drawer {
-    transform: translateX(0);
-  }
-
-  #navbar__list--mobile {
-    margin-top: 20px;
-    margin-left: 10px;
-  }
-
-  .navbar__link {
-    display: block; /* Để có thể click thẻ a phạm vi rộng */
-    font-size: 16px;
-    padding: 10px;
-  }
-
-  .header-contact-link-tel {
-    margin: 0 10px;
-    display: flex;
-    justify-content: center;
-  }
-
-  .header-contact-text-tel-mobile {
-    display: block;
-    font-size: 14px;
-    color: black;
-  }
-
-  /* FOOTER */
-  .footer-box {
-    flex-direction: column;
+/* Styles for larger screens */
+@media (min-width: 991px) {
+  nav {
+    flex-direction: row; /* Change to row for desktop */
     justify-content: space-between;
-    align-items: flex-start;
-  }
-  .sns-bar {
-    margin-bottom: 0;
-    text-align: left;
-  }
-
-  .footer-top {
-    flex-direction: column;
-  }
-
-  /* MAIN */
-  .tour-wrapper {
+    align-items: center;
     padding: 20px;
   }
 
-  .exhibition_list,
-  .reality-list {
-    flex-direction: column;
-    gap: 20px;
+  .logo-container {
+    margin-bottom: 0;
+    width: auto;
+  }
+
+  .logo-container img {
+    max-height: 30px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: row;
+    width: auto;
+    margin-top: 0;
+  }
+
+  .nav-links a {
+    display: inline;
+    width: auto;
+    margin: 0 15px;
+    padding: 0;
+    border-top: none;
+  }
+
+  .menu-icon {
+    display: none;
   }
 }
