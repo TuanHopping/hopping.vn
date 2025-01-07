@@ -1,10 +1,10 @@
-/* Styles for larger screens */
+/* Styles for PC */
 @media (min-width: 991px) {
   nav {
-    flex-direction: row; /* Change to row for desktop */
-    justify-content: space-between;
+    flex-direction: row;
     align-items: center;
     padding: 20px;
+    justify-content: space-between; /* Quan trọng: Phân bổ không gian giữa các phần tử */
   }
 
   .logo-container {
@@ -19,19 +19,81 @@
   .nav-links {
     display: flex;
     flex-direction: row;
-    width: auto;
+    align-items: center;
     margin-top: 0;
+    margin-left: 20px; /* Khoảng cách với logo */
+    flex-grow: 1; /* Để nav-links chiếm không gian */
+    justify-content: center; /* Căn giữa nav-links */
   }
 
-  .nav-links a {
-    display: inline;
-    width: auto;
+  .nav-links__bar {
+    display: flex;
+  }
+
+  .main-nav-link {
+    display: inline-block;
     margin: 0 15px;
-    padding: 0;
+    padding: 10px;
     border-top: none;
+    white-space: nowrap;
   }
 
-  .menu-icon {
+  .header__connect {
+    display: flex;
+    margin-left: auto;
+    align-items: center;
+  }
+
+  .tel {
+    /* width: 100%; */
+  }
+
+  .hamburger-icon {
     display: none;
+  }
+
+  /* MAIN */
+  .product-grid {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .grid-container {
+    justify-content: space-around; /* Distribute cards evenly on larger screens */
+    padding: 2rem;
+  }
+  .grid-card {
+    width: calc(33.33% - 2rem); /* 3 cards per row with gap */
+  }
+  .product-card {
+    width: auto;
+  }
+  .property-card {
+    width: 250px;
+  }
+  .main-image {
+    /* width: 500px; */
+  }
+  .thumbnail {
+    /* width: 150px;
+    height: 100px; */
+  }
+
+  /* Properties */
+  .property-grid {
+    flex-direction: row; /* Arrange in rows */
+    flex-wrap: wrap; /* Allow wrapping to next row */
+    justify-content: space-between; /* Distribute space between cards */
+  }
+
+  .property-card {
+    width: calc(50% - 0.5rem); /* Two cards per row */
+  }
+
+  /* Responsive: Poroperties Subpages */
+  .subImage-box {
+  }
+
+  .thumbnail {
   }
 }

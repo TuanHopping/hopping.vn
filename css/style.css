@@ -1,6 +1,9 @@
 /* Mobile First Styles */
-#navbar--mobile {
-  height: 50px;
+header {
+  height: 60%;
+  position: sticky;
+  top: 0px; /* Dính vào đỉnh viewport */
+  z-index: 100; /* Đảm bảo navbar ở trên các phần tử khác */
 }
 
 nav {
@@ -9,10 +12,7 @@ nav {
   flex-direction: column; /* Default is column for mobile */
   align-items: flex-start; /* Align items to the left */
   padding: 10px; /* Reduced padding for mobile */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-  position: sticky;
-  top: 0px; /* Dính vào đỉnh viewport */
-  z-index: 100; /* Đảm bảo navbar ở trên các phần tử khác */
+  position: relative;
 }
 
 .logo-container {
@@ -21,7 +21,7 @@ nav {
 }
 
 .logo-container img {
-  max-height: 25px; /* Slightly smaller logo on mobile */
+  max-height: 25px;
 }
 
 .nav-links {
@@ -35,20 +35,35 @@ nav {
 
 .nav-links.active {
   display: flex;
+  flex-direction: column;
+  position: fixed; /* Quan trọng: đặt vị trí cố định */
+  top: 5%; /* Tạm */
+  left: 0;
+  width: 100%;
+  z-index: 1000;
 }
 
-.nav-links a {
+.nav-links.active {
+  display: flex;
+  flex-direction: column;
+  /* position: fixed; */
+  /* top: 5%; */
+  left: 0;
+  /* width: 100%; */
+  z-index: 1000;
+}
+
+.main-nav-link {
   display: block;
   width: 100%;
-  margin: 5px 0;
-  padding: 15px;
+  padding: 10px;
   border-top: 1px solid #ddd;
   text-decoration: none;
   color: white;
   box-sizing: border-box; /* Important for width: 100% to include padding and border */
 }
 
-.menu-icon {
+.hamburger-icon {
   color: white;
   display: block;
   font-size: 2rem; /* Use rem for better scaling */
@@ -58,18 +73,40 @@ nav {
   right: 10px; /* Adjusted position */
 }
 
-.signup-button {
-  background-color: purple;
-  color: white;
-  padding: 10px 20px;
-  border: none;
-  border-radius: 5px;
-  text-decoration: none;
-  width: 100%;
-  margin-top: 10px;
-  box-sizing: border-box; /* Important for width: 100% to include padding */
+.tel {
+  display: inline-block; /* Để có thể thêm padding */
+  font-weight: 400;
+  background: #c3c5d2;
+  border-radius: 4px;
+  border: 1px dashed #2b325f;
+  padding: 5px;
 }
 
+.tel a {
+  display: flex;
+  align-items: center; /* Căn chỉnh theo chiều dọc (nếu cần) */
+  width: 100%; /* Đảm bảo a chiếm hết chiều rộng của cha */
+}
+
+.tel span {
+  font-size: 1.2rem;
+  line-height: 1.4;
+  vertical-align: middle;
+  background-color: rgba(43, 50, 95, 0.7);
+  color: white;
+  padding: 5px;
+  border-radius: 4px;
+  margin-right: 5px;
+}
+
+.sns {
+  margin-left: 10px;
+  display: flex;
+  gap: 10px;
+  padding: 5px;
+}
+
+/* MAIN */
 /* Basic container for pages */
 .container {
   margin: 20px;
@@ -81,7 +118,6 @@ ul {
 }
 
 /* Mobile First Styles */
-
 /* Common styles for both product and property grids */
 .section-title {
   text-align: center;
@@ -116,16 +152,26 @@ ul {
 
 /* Product Grid Layout */
 .product-grid {
+  display: flex;
+  flex-direction: column; /* Stack vertically on small screens */
+  gap: 1rem;
 }
 
 .product-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden; /* Ensure image doesn't overflow */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .product-image {
-  height: 200px; /* Adjust as needed for mobile */
+  width: 100%;
+  height: auto;
+  display: block; /* Prevents a small gap below the image */
 }
 
 .product-description {
+  padding: 5px;
 }
 
 .product-title {
@@ -145,102 +191,92 @@ ul {
   font-weight: bold;
 }
 
-/* Property Grid Layout */
+/* Properties */
+.container {
+  padding: 1rem;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
 .property-grid {
+  display: flex;
+  flex-direction: column; /* Stack vertically on small screens */
+  gap: 1rem;
 }
 
 .property-card {
-  position: relative;
-}
-
-.property-image {
-  height: 250px; /* Adjust as needed for mobile */
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden; /* Ensure image doesn't overflow */
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .ribbon {
-  width: 100%;
-  height: 2rem;
   position: absolute;
-  top: 0;
-  left: 0;
-  background-color: rgba(255, 255, 255, 0.7); /* Slightly less transparent */
-  border-radius: 5px;
-  display: flex; /* Center text vertically */
-  align-items: center;
-  justify-content: center;
-  font-weight: bold;
+  left: -5px;
+  top: 15px;
+  z-index: 1;
+  overflow: hidden;
+  width: 75px;
+  height: 75px;
+  text-align: center;
+}
+
+.property-image {
+  width: 100%;
+  height: auto;
+  display: block; /* Prevents a small gap below the image */
+}
+
+.property-description {
+  padding: 1rem;
 }
 
 .property-type {
-  font-size: 0.9rem;
-  color: #555;
+  font-size: 0.875rem;
+  color: #777;
+  margin-bottom: 0.5rem;
+}
+
+.property-title {
+  font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
 .property-area {
-  font-size: 0.8rem;
-  color: #555;
+  font-size: 0.875rem;
 }
 
-/* Property Detail Layout */
+/* Poroperties Subpages */
 .property-detail {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 1rem; /* Add some padding */
-}
-
-.main-image {
-  width: 100%; /* Full width on mobile */
-  margin-bottom: 1rem;
 }
 
 .main-img {
   width: 100%;
+  max-width: 800px;
   height: auto;
-  object-fit: contain;
+  display: block; /* Loại bỏ khoảng trắng thừa dưới ảnh */
 }
 
-.thumbnail-images {
+.subImage-box {
   display: flex;
-  flex-wrap: wrap; /* Allow thumbnails to wrap */
-  justify-content: center; /* Center thumbnails */
-  gap: 0.5rem;
+  justify-content: center; /* Căn giữa các ảnh */
+  margin-top: 5px;
+  gap: 5px; /* Khoảng cách giữa các ảnh */
+  width: 100%; /* Chiếm toàn bộ chiều rộng container */
 }
 
 .thumbnail {
-  width: 100px; /* Smaller thumbnails on mobile */
-  height: 75px;
-  object-fit: cover;
-  cursor: pointer;
-}
-
-/* Styles for larger screens */
-@media (min-width: 768px) {
-  /* Adjust breakpoint as needed */
-  .grid-container {
-    justify-content: space-around; /* Distribute cards evenly on larger screens */
-    padding: 2rem;
-  }
-  .grid-card {
-    width: calc(33.33% - 2rem); /* 3 cards per row with gap */
-  }
-  .product-card {
-    width: 200px;
-  }
-  .property-card {
-    width: 250px;
-  }
-  .main-image {
-    width: 500px;
-  }
-  .thumbnail {
-    width: 150px;
-    height: 100px;
-  }
-}
-@media (min-width: 1024px) {
-  .grid-card {
-    width: calc(25% - 2rem); /* 4 cards per row with gap */
-  }
+  height: auto;
+  max-width: 100px; /* Giới hạn chiều rộng tối đa của mỗi ảnh */
+  object-fit: cover; /* Đảm bảo ảnh không bị méo */
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+  flex: 1 1 calc(33.33% - 5px); /* Chia đều không gian và trừ khoảng gap */
 }
