@@ -1,9 +1,13 @@
 /* Styles for PC */
 @media (min-width: 991px) {
+  .container {
+    margin: 30px;
+  }
+
   nav {
     flex-direction: row;
     align-items: center;
-    padding: 20px;
+    padding: 10px;
     justify-content: space-between; /* Quan trọng: Phân bổ không gian giữa các phần tử */
   }
 
@@ -30,6 +34,10 @@
     display: flex;
   }
 
+  .nav-links__bar a {
+    font-size: 1.4rem;
+  }
+
   .main-nav-link {
     display: inline-block;
     margin: 0 15px;
@@ -52,10 +60,14 @@
     display: none;
   }
 
-  /* MAIN */
+  /* HOMEPAGE MAIN */
   .product-grid {
     flex-direction: row;
     justify-content: center;
+  }
+
+  .product-details {
+    min-height: 6rem;
   }
 
   .grid-container {
@@ -95,5 +107,14 @@
   }
 
   .thumbnail {
+  }
+
+  /* Table */
+  .property-table {
+    width: 50%;
+  }
+
+  .property-table th {
+    width: 30%;
   }
 }

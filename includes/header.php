@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/variables.css">
     <link rel="stylesheet" href="../css/responsive.css">
+    <link rel="icon" href="./images/favicon.ico" type="image/x-icon">
 </head>
 
 <body>
@@ -15,7 +16,7 @@
         <nav>
             <div class="logo-container">
                 <a href="/index.php">
-                    <img class="logo" src="./images/logo.png" alt="Korea Hopping Website" />
+                    <img src="./images/logo.png" alt="Korea Hopping Website" class="logo" />
                 </a>
             </div>
             <!-- Menu -->
@@ -36,13 +37,13 @@
                     <!-- SNS connect -->
                     <div class="sns">
                         <div>
-                            <a href=""><img src="../public/images/sns-icon/kakao-channel.png" alt="Kakao Talk"></a>
+                            <a href="http://qr.kakao.com/talk/BMpyGE0wdiG1IeKC05Tk2je5djo-" target="_blank"><img src="../public/images/sns-icon/kakao-channel.png" alt="Kakao Talk"></a>
                         </div>
                         <div>
-                            <a href=""><img src="../public/images/sns-icon/fb-icon.png" alt="Facebook Fanpage"></a>
+                            <a href="https://www.facebook.com/koreahopping" target="_blank"><img src="../public/images/sns-icon/fb-icon.png" alt="Facebook Fanpage"></a>
                         </div>
                         <div>
-                            <a href=""><img src="../public/images/sns-icon/instagram-icon.png" alt="Instagram"></a>
+                            <a href="https://www.instagram.com/koreahopping/" target="_blank"><img src="../public/images/sns-icon/instagram-icon.png" alt="Instagram"></a>
                         </div>
                     </div>
                 </div>

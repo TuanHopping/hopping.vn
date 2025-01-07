@@ -1,4 +1,5 @@
 /* Mobile First Styles */
+/* HEADER */
 header {
   height: 60%;
   position: sticky;
@@ -20,8 +21,9 @@ nav {
   text-align: left;
 }
 
-.logo-container img {
+.logo {
   max-height: 25px;
+  /* width: 100%; */
 }
 
 .nav-links {
@@ -31,6 +33,11 @@ nav {
   width: 100%;
   text-align: left;
   margin-top: 10px;
+}
+
+.nav-links__bar a {
+  font-size: 1.2rem;
+  font-weight: 600;
 }
 
 .nav-links.active {
@@ -106,12 +113,31 @@ nav {
   padding: 5px;
 }
 
-/* MAIN */
-/* Basic container for pages */
-.container {
-  margin: 20px;
+/* FOOTER */
+.footer-wrap {
+  padding: 10px 0;
 }
 
+.footer-info {
+  background-color: #585858;
+  padding: 10px;
+}
+
+.footer-info div {
+  font-size: 12px;
+  line-height: 16px;
+  color: white;
+}
+
+.copyright {
+  margin-top: 5px;
+  font-size: 12px;
+  line-height: 16px;
+  color: black;
+  text-align: center;
+}
+
+/* MAIN */
 /* basic styling for ul elements */
 ul {
   list-style-type: square;
@@ -160,7 +186,6 @@ ul {
 .product-card {
   border: 1px solid #ddd;
   border-radius: 8px;
-  overflow: hidden; /* Ensure image doesn't overflow */
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -171,7 +196,7 @@ ul {
 }
 
 .product-description {
-  padding: 5px;
+  padding: 8px;
 }
 
 .product-title {
@@ -180,13 +205,13 @@ ul {
 }
 
 .product-details {
-  font-size: 0.9rem;
+  font-size: 1.1rem;
   color: #555;
-  margin-bottom: 0.5rem;
 }
 
 .product-price {
-  font-size: 1.1rem;
+  margin-top: auto;
+  font-size: 1.4rem;
   color: #333;
   font-weight: bold;
 }
@@ -212,17 +237,6 @@ ul {
   border-radius: 8px;
   overflow: hidden; /* Ensure image doesn't overflow */
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-}
-
-.ribbon {
-  position: absolute;
-  left: -5px;
-  top: 15px;
-  z-index: 1;
-  overflow: hidden;
-  width: 75px;
-  height: 75px;
-  text-align: center;
 }
 
 .property-image {
@@ -264,7 +278,7 @@ ul {
   display: block; /* Loại bỏ khoảng trắng thừa dưới ảnh */
 }
 
-.subImage-box {
+.sub-image-box {
   display: flex;
   justify-content: center; /* Căn giữa các ảnh */
   margin-top: 5px;
@@ -279,4 +293,34 @@ ul {
   border: 1px solid #ccc;
   box-sizing: border-box;
   flex: 1 1 calc(33.33% - 5px); /* Chia đều không gian và trừ khoảng gap */
+}
+
+/* Table */
+.box-con {
+  margin-top: 20px;
+  padding: 10px;
+}
+
+.box-con__title {
+  padding: 10px;
+}
+
+.property-table {
+  padding: 5px;
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.property-table th,
+.property-table td {
+  font-size: 1.3rem;
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+  box-sizing: border-box;
+}
+
+.property-table th {
+  background-color: #f2f2f2;
+  font-weight: bold;
 }
